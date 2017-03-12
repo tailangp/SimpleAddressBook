@@ -4,7 +4,7 @@ node_js:
 ##install : npm install
 deploy:
   provider: azure_web_apps
-  username: SimpleAddressBook\tailangp
+  username: SimpleAddressBook\ptailang
   password: m2n1shlko
   site: SimpleAddressBook
   verbose: true
