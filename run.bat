@@ -1,0 +1,1 @@
+START /min /B "Watch Server TS" node_modules\.bin\tsc -w

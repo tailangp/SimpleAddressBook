@@ -3,12 +3,9 @@ import * as path from "path";
 import * as logger from "morgan";
 import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
+import ApiRouter from "./routes/router";
 
- let app = express();
-
-// var index = require('./routes/index');
-// var users = require('./routes/users');
-
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,18 +25,18 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+//register other routes
+ApiRouter(app);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
+app.use(function (req, res, next) {
+  var err = new Error('Not Found') as any;
+  err.status(404);
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
