@@ -1,11 +1,10 @@
 language: node_js
 node_js:
-  - "iojs"
   - "6"
-install : npm install
+##install : npm install
 deploy:
   provider: azure_web_apps
   username: SimpleAddressBook\tailangp
   password: m2n1shlko
-  site: http://simpleaddressbook.azurewebsites.net
+  site: simpleaddressbook
   verbose: true
