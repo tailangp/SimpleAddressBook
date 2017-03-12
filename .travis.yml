@@ -5,8 +5,7 @@ node_js:
 install : npm install
 deploy:
   provider: azure_web_apps
-  username: SimpleAddressBook__Dev\tailangp       # If AZURE_WA_USERNAME isn't set
-  password: m2n1shlko   # If AZURE_WA_PASSWORD isn't set
-  site: http://simpleaddressbook-dev.azurewebsites.net/       # If AZURE_WA_SITE isn't set
-  slot: simpleaddressbook       # (optional) If AZURE_WA_SLOT isn't set
+  username: SimpleAddressBook\tailangp
+  password: m2n1shlko
+  site: http://simpleaddressbook.azurewebsites.net/
   verbose: true
