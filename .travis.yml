@@ -7,3 +7,5 @@ deploy:
   password: m2n1shlko
   site: simpleaddressbook
   verbose: true
+
+  
