@@ -5,5 +5,5 @@ deploy:
   provider: azure_web_apps
   username: SimpleAddressBook\ptailang
   password: m2n1shlko
-  site: simpleaddressbook.azurewebsites.net
+  site: simpleaddressbook
   verbose: true
