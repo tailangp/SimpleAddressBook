@@ -1,9 +1,12 @@
-import index from './users';
-import users from './index';
-import * as express from 'express';
+import index from "./index";
+import users from "./users";
 
-let ApiRouter = (app : express.Express) =>{
-    app.use("./api/index", index);
-    app.use("./api/users", users);
-}
-export default ApiRouter; 
+import * as express from "express";
+
+let RegisterAPI = (app: express.Express) => {
+    // all api calls handled here
+    app.use("/api/index", index);
+    app.use("/api/users", users);
+};
+
+export default RegisterAPI;

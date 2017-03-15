@@ -3,7 +3,8 @@ import * as path from "path";
 import * as logger from "morgan";
 import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
-import ApiRouter from "./routes/router";
+import * as favicon from "serve-favicon";
+import RegisterAPI from "./routes/router";
 
 let app = express();
 
@@ -17,20 +18,19 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
-  sourceMap: true
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//register other routes
-ApiRouter(app);
+// all api calls handled here
+RegisterAPI(app);
+
+//Default Route to the app
+app.use("/", function (req, res, next) {
+  res.render("index", { title: "Testing Express App" })
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  var err = new Error('Not Found') as any;
+  let err = new Error('Not Found') as any;
   err.status(404);
   next(err);
 });
@@ -46,4 +46,7 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+
+
+//export default app
 export default app;

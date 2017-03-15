@@ -1,0 +1,15 @@
+{
+    "script": "./server.js",
+    "nodeArgs": [
+        "--debug"
+    ],
+    "ignore": [
+        "public/",
+        "src/",
+        "deploy/"
+    ],
+    "env": {
+        "NODE_ENV": "development",
+        "MONGO_URL": "mongodb://localhost:27017/test"
+    }
+}

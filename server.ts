@@ -5,12 +5,14 @@
  */
 
 import app from "./app";
-import * as debugMod from 'debug';
-import * as http from 'http';
-let debug = debugMod("socialaddressbook:server");
+import * as debugMod from "debug";
+import * as http from "http";
+let debug = debugMod("test:server");
+
 /**
  * Get port from environment and store in Express.
  */
+
 var port = normalizePort(process.env['PORT'] || '3000');
 app.set('port', port);
 
