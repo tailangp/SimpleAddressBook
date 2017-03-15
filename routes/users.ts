@@ -4,5 +4,5 @@ export default router;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('Testing things with users project goes all along.');
 });
