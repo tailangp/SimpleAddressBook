@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 router_1.default(app);
 //Default Route to the app
 app.use("/", function (req, res, next) {
-    res.render("index", { title: "Testing Express App" });
+    res.render("index", { title: "Simple Address Book" });
 });
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
